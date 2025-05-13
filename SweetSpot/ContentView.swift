@@ -67,12 +67,10 @@ struct ContentView: View {
                     .ignoresSafeArea()
 
                 VStack(spacing: 24) {
-                    // Large Title
                     Text("Sweet Spot")
                         .font(.largeTitle.weight(.bold))
                         .padding(.top, 12)
 
-                    // Subtitle with Atom Symbol
                     HStack(spacing: 6) {
                         Text("How much fuel?")
                         Image(systemName: "atom")
@@ -82,7 +80,6 @@ struct ContentView: View {
                     .padding(.horizontal)
                     .foregroundStyle(Color.primary.opacity(0.68))
 
-                    // Centered Input Field
                     TextField("Enter total grams", text: $totalGramsInput)
                         .keyboardType(.decimalPad)
                         .font(.system(size: 24, weight: .medium, design: .rounded))
@@ -97,7 +94,6 @@ struct ContentView: View {
                         .padding(.horizontal)
                         .focused($isInputFocused)
                     
-                    // Ratio Picker
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Carbohydrate Ratio")
                             .font(.caption)
@@ -112,7 +108,6 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
 
-                    // Calculate Button
                     Button {
                         isInputFocused = false
                         if let total = Double(totalGramsInput) {
@@ -131,7 +126,6 @@ struct ContentView: View {
                     }
                     .padding(.horizontal)
 
-                    // Results Section
                     if let mix = result {
                         VStack(spacing: 12) {
                             HStack {
@@ -156,7 +150,6 @@ struct ContentView: View {
                         .padding(.horizontal)
                     }
                     
-                    // Reset Button
                     Button {
                         totalGramsInput = ""
                         result = nil
